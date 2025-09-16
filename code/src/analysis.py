@@ -1549,7 +1549,7 @@ def visualize_loadings(loading_df,
     else:
         # Get order for items and sort DF by order
         order_mapping = {item: rank for rank, item in enumerate(item_order)}
-        loading_df['rank'] = loading_df[item_colname].map(order_mapping)
+        loading_df.loc[:, 'rank'] = loading_df[item_colname].map(order_mapping)
         loading_df = loading_df.sort_values('rank', ascending=False) #.drop(columns=['rank'])
         loading_df = loading_df.drop(columns='rank')
 
