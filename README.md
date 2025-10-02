@@ -82,6 +82,19 @@ Primary reported analyses in Sec 3.2 can be found in `analysis_copy/mental_capac
 
 It is not guaranteed that running the notebooks out of order is functional.
 
+## Preparing Reported Results
+
+We provide a utility script, `copy_reported_results.py`, to collect key analysis outputs and place them into a centralized `reported_results/` directory. This ensures that the results referenced in the paper are stored in one place and easy to track.
+
+### How to Run 
+
+From the repository root:
+
+- **Run for Study 1**:
+  ```bash
+  python copy_reported_results.py --study 1
+
+
 #### Notes for Attitudes
 
 Below is the mapping for attitudes shorthand variables to the reported names in the paper:
