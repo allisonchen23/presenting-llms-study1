@@ -163,7 +163,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Choose the correct spec set based on CLI argument
-    specs = STUDY1_SPECS if args.study == "1" else STUDY2_SPECS
+    specs = STUDY1_SPECS
 
     # Run the copy logic
     prepare_reported_results(
