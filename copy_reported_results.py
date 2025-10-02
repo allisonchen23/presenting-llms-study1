@@ -22,9 +22,7 @@ from dataclasses import dataclass
 from typing import List
 
 
-# -----------------------
 # Data structure for copy instructions
-# -----------------------
 
 @dataclass
 class CopySpec:
@@ -132,13 +130,13 @@ def prepare_reported_results(repo_root: str, specs: List[CopySpec], fail_on_miss
 
 # Study 1 file mappings
 STUDY1_SPECS: List[CopySpec] = [
-    # Section 3.2.1–2: Mental capacities → rename
+    # Section 3.2.1–2: Mental capacities --> rename
     CopySpec(
         src="analysis/mental_capacities/factor_analysis/results/R/results/3_components_results.txt",
         dst="reported_results/sec3.2.1-2_results.txt",
     ),
 
-    # Section 3.2.3: Attitudes → copy/rename into a results folder
+    # Section 3.2.3: Attitudes --> copy/rename into a results folder
     CopySpec(src="analysis/attitudes/R/results/confidence_results.txt", dst="reported_results/sec3.2.3_results/"),
     CopySpec(src="analysis/attitudes/R/results/feeling_results.txt",    dst="reported_results/sec3.2.3_results/"),
     CopySpec(src="analysis/attitudes/R/results/humanness_results.txt",  dst="reported_results/sec3.2.3_results/"),

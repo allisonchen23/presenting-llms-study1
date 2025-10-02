@@ -65,6 +65,25 @@ Note: if there are other packages you would like to install, you can do so using
 
 If you have issues installing `simr`, it might be because you are using MacOS or from using MiniConda instead of Anaconda. Still need to debug the root of the issue, but try to use Anaconda on Linux if possible.
 
+## Checking Required R Packages
+
+This study depends on a set of R packages for analysis (mixed-effects modeling, plotting, power analysis, etc.).  
+To make sure collaborators can reproduce results easily, we provide a helper script: **`check_packages.r`**.
+
+### Purpose
+- Verifies that all required R packages for this study are installed.  
+- Automatically installs any missing packages from CRAN (`https://cloud.r-project.org`).  
+- Ensures everyone in the project is working with the same analysis dependencies.
+
+### How to Run
+
+From the repository root:
+
+```bash
+Rscript check_packages.r
+
+
+
 ### Install Python Dependencies
 
 Install the required Python packages:
