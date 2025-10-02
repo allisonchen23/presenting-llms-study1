@@ -65,6 +65,25 @@ Note: if there are other packages you would like to install, you can do so using
 
 If you have issues installing `simr`, it might be because you are using MacOS or from using MiniConda instead of Anaconda. Still need to debug the root of the issue, but try to use Anaconda on Linux if possible.
 
+## Checking Required R Packages
+
+This study depends on a set of R packages for analysis (mixed-effects modeling, plotting, power analysis, etc.).  
+To make sure collaborators can reproduce results easily, we provide a helper script: **`check_packages.r`**.
+
+### Purpose
+- Verifies that all required R packages for this study are installed.  
+- Automatically installs any missing packages from CRAN (`https://cloud.r-project.org`).  
+- Ensures everyone in the project is working with the same analysis dependencies.
+
+### How to Run
+
+From the repository root:
+
+```bash
+Rscript check_packages.r
+
+
+
 ### Install Python Dependencies
 
 Install the required Python packages:
@@ -81,6 +100,19 @@ The main analyses can be found in `code`, split up into 4 Jupyter notebooks. `1_
 Primary reported analyses in Sec 3.2 can be found in `analysis_copy/mental_capacities/factor_analysis/results/R/results` for mental capacities and `analysis_copy/attitudes/R/results` for attitudes
 
 It is not guaranteed that running the notebooks out of order is functional.
+
+## Preparing Reported Results
+
+We provide a utility script, `copy_reported_results.py`, to collect key analysis outputs and place them into a centralized `reported_results/` directory. This ensures that the results referenced in the paper are stored in one place and easy to track.
+
+### How to Run 
+
+From the repository root:
+
+- **Run for Study 1**:
+  ```bash
+  python copy_reported_results.py --study 1
+
 
 #### Notes for Attitudes
 

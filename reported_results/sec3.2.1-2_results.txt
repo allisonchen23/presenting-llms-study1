@@ -1,0 +1,342 @@
+
+
+ Model Summary: 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: rating ~ portrayal * category + (1 | pid)
+   Data: df
+
+REML criterion at convergence: 71248.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3511 -0.5368 -0.0855  0.6017  3.9487 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ pid      (Intercept) 0.5141   0.717   
+ Residual             2.4457   1.564   
+Number of obs: 18800, groups:  pid, 470
+
+Fixed effects:
+                                      Estimate Std. Error         df t value
+(Intercept)                          1.679e+00  7.310e-02  5.598e+02  22.965
+portrayalMachines                   -1.513e-01  1.038e-01  5.598e+02  -1.457
+portrayalTools                      -1.251e-02  1.032e-01  5.598e+02  -0.121
+portrayalCompanions                  4.677e-01  1.036e-01  5.598e+02   4.515
+categoryFactor2                      2.796e+00  4.697e-02  1.832e+04  59.524
+categoryFactor3                     -5.178e-01  1.065e-01  1.832e+04  -4.860
+portrayalMachines:categoryFactor2    1.179e-01  6.671e-02  1.832e+04   1.767
+portrayalTools:categoryFactor2       3.571e-02  6.629e-02  1.832e+04   0.539
+portrayalCompanions:categoryFactor2  5.365e-02  6.657e-02  1.832e+04   0.806
+portrayalMachines:categoryFactor3    8.077e-02  1.513e-01  1.832e+04   0.534
+portrayalTools:categoryFactor3      -4.347e-02  1.504e-01  1.832e+04  -0.289
+portrayalCompanions:categoryFactor3 -4.877e-01  1.510e-01  1.832e+04  -3.230
+                                    Pr(>|t|)    
+(Intercept)                          < 2e-16 ***
+portrayalMachines                    0.14569    
+portrayalTools                       0.90355    
+portrayalCompanions                 7.73e-06 ***
+categoryFactor2                      < 2e-16 ***
+categoryFactor3                     1.18e-06 ***
+portrayalMachines:categoryFactor2    0.07727 .  
+portrayalTools:categoryFactor2       0.59012    
+portrayalCompanions:categoryFactor2  0.42024    
+portrayalMachines:categoryFactor3    0.59349    
+portrayalTools:categoryFactor3       0.77249    
+portrayalCompanions:categoryFactor3  0.00124 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) prtryM prtryT prtryC ctgrF2 ctgrF3 prM:F2 prT:F2 prC:F2
+prtrylMchns -0.704                                                        
+portraylTls -0.709  0.499                                                 
+prtrylCmpnn -0.706  0.497  0.500                                          
+catgryFctr2 -0.287  0.202  0.204  0.203                                   
+catgryFctr3 -0.127  0.089  0.090  0.089  0.197                            
+prtrylMc:F2  0.202 -0.287 -0.143 -0.143 -0.704 -0.139                     
+prtrylTl:F2  0.204 -0.143 -0.287 -0.144 -0.709 -0.140  0.499              
+prtrylCm:F2  0.203 -0.143 -0.144 -0.287 -0.706 -0.139  0.497  0.500       
+prtrylMc:F3  0.089 -0.127 -0.063 -0.063 -0.139 -0.704  0.197  0.098  0.098
+prtrylTl:F3  0.090 -0.063 -0.127 -0.063 -0.140 -0.709  0.098  0.197  0.099
+prtrylCm:F3  0.089 -0.063 -0.063 -0.127 -0.139 -0.706  0.098  0.099  0.197
+            prM:F3 prT:F3
+prtrylMchns              
+portraylTls              
+prtrylCmpnn              
+catgryFctr2              
+catgryFctr3              
+prtrylMc:F2              
+prtrylTl:F2              
+prtrylCm:F2              
+prtrylMc:F3              
+prtrylTl:F3  0.499       
+prtrylCm:F3  0.497  0.500
+
+
+ EMMeans Analysis for portrayals: 
+$`emmeans of portrayal`
+ portrayal  emmean     SE  df lower.CL upper.CL
+ NoVideo      2.44 0.0759 649     2.29     2.59
+ Machines     2.35 0.0765 649     2.20     2.50
+ Tools        2.42 0.0755 649     2.27     2.57
+ Companions   2.76 0.0762 649     2.61     2.91
+
+Results are averaged over the levels of: category 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$`pairwise differences of portrayal`
+ 1                     estimate    SE  df t.ratio p.value
+ NoVideo - Machines      0.0851 0.108 649   0.790  0.8592
+ NoVideo - Tools         0.0151 0.107 649   0.141  0.9990
+ NoVideo - Companions   -0.3231 0.107 649  -3.005  0.0146
+ Machines - Tools       -0.0700 0.108 649  -0.651  0.9153
+ Machines - Companions  -0.4081 0.108 649  -3.780  0.0010
+ Tools - Companions     -0.3381 0.107 649  -3.152  0.0092
+
+Results are averaged over the levels of: category 
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 4 estimates 
+
+
+ Mean of baseline, machine, and tool portrayal conditions 
+ contrast                estimate     SE  df lower.CL upper.CL
+ Non-companion aggregate      2.4 0.0439 649     2.32     2.49
+
+Results are averaged over the levels of: category 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+Non-companion vs companion differences
+ contrast                 estimate     SE  df lower.CL upper.CL t.ratio p.value
+ Companion - Noncompanion    0.356 0.0879 649    0.184    0.529   4.055  0.0001
+
+Results are averaged over the levels of: category 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+
+ EMMeans Analysis for portrayal marginalized over category: 
+$`emmeans of portrayal | category`
+category = Factor1:
+ portrayal  emmean     SE   df lower.CL upper.CL
+ NoVideo      1.68 0.0731  560    1.535     1.82
+ Machines     1.53 0.0737  560    1.383     1.67
+ Tools        1.67 0.0728  560    1.523     1.81
+ Companions   2.15 0.0734  560    2.002     2.29
+
+category = Factor2:
+ portrayal  emmean     SE   df lower.CL upper.CL
+ NoVideo      4.47 0.0747  609    4.328     4.62
+ Machines     4.44 0.0753  609    4.293     4.59
+ Tools        4.50 0.0744  609    4.352     4.64
+ Companions   5.00 0.0750  609    4.849     5.14
+
+category = Factor3:
+ portrayal  emmean     SE   df lower.CL upper.CL
+ NoVideo      1.16 0.1210 3849    0.923     1.40
+ Machines     1.09 0.1220 3849    0.851     1.33
+ Tools        1.11 0.1210 3849    0.868     1.34
+ Companions   1.14 0.1220 3849    0.902     1.38
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$`pairwise differences of portrayal | category`
+category = Factor1:
+ 2                     estimate    SE   df t.ratio p.value
+ NoVideo - Machines      0.1513 0.104  560   1.457  0.4644
+ NoVideo - Tools         0.0125 0.103  560   0.121  0.9994
+ NoVideo - Companions   -0.4677 0.104  560  -4.515  <.0001
+ Machines - Tools       -0.1388 0.104  560  -1.339  0.5382
+ Machines - Companions  -0.6190 0.104  560  -5.949  <.0001
+ Tools - Companions     -0.4803 0.103  560  -4.645  <.0001
+
+category = Factor2:
+ 2                     estimate    SE   df t.ratio p.value
+ NoVideo - Machines      0.0334 0.106  609   0.315  0.9892
+ NoVideo - Tools        -0.0232 0.105  609  -0.220  0.9962
+ NoVideo - Companions   -0.5214 0.106  609  -4.927  <.0001
+ Machines - Tools       -0.0566 0.106  609  -0.535  0.9506
+ Machines - Companions  -0.5548 0.106  609  -5.220  <.0001
+ Tools - Companions     -0.4982 0.106  609  -4.717  <.0001
+
+category = Factor3:
+ 2                     estimate    SE   df t.ratio p.value
+ NoVideo - Machines      0.0705 0.172 3849   0.409  0.9769
+ NoVideo - Tools         0.0560 0.171 3849   0.327  0.9879
+ NoVideo - Companions    0.0200 0.172 3849   0.116  0.9994
+ Machines - Tools       -0.0145 0.172 3849  -0.084  0.9998
+ Machines - Companions  -0.0505 0.173 3849  -0.292  0.9913
+ Tools - Companions     -0.0360 0.172 3849  -0.210  0.9967
+
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 4 estimates 
+
+
+ Mean of baseline, machine, and tool portrayal conditions marginalized by category 
+category = Factor1:
+ contrast                estimate     SE   df lower.CL upper.CL
+ Non-companion aggregate     1.62 0.0423  560    1.541     1.71
+
+category = Factor2:
+ contrast                estimate     SE   df lower.CL upper.CL
+ Non-companion aggregate     4.47 0.0432  609    4.386     4.56
+
+category = Factor3:
+ contrast                estimate     SE   df lower.CL upper.CL
+ Non-companion aggregate     1.12 0.0702 3849    0.981     1.26
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+Non-companion vs companion differences marginalized by category
+category = Factor1:
+ contrast                 estimate     SE   df lower.CL upper.CL t.ratio
+ Companion - Noncompanion   0.5223 0.0847  560    0.356    0.689   6.166
+ p.value
+  <.0001
+
+category = Factor2:
+ contrast                 estimate     SE   df lower.CL upper.CL t.ratio
+ Companion - Noncompanion   0.5248 0.0865  609    0.355    0.695   6.065
+ p.value
+  <.0001
+
+category = Factor3:
+ contrast                 estimate     SE   df lower.CL upper.CL t.ratio
+ Companion - Noncompanion   0.0222 0.1410 3849   -0.253    0.298   0.158
+ p.value
+  0.8747
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+ EMMeans for category 
+$`emmeans of category`
+ category emmean     SE   df lower.CL upper.CL
+ Factor1    1.75 0.0366  560     1.68     1.83
+ Factor2    4.60 0.0374  609     4.53     4.68
+ Factor3    1.12 0.0608 3849     1.01     1.24
+
+Results are averaged over the levels of: portrayal 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$`pairwise differences of category`
+ 1                 estimate     SE    df  t.ratio p.value
+ Factor1 - Factor2    -2.85 0.0235 18322 -120.991  <.0001
+ Factor1 - Factor3     0.63 0.0534 18322   11.808  <.0001
+ Factor2 - Factor3     3.48 0.0539 18322   64.494  <.0001
+
+Results are averaged over the levels of: portrayal 
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+
+ANOVA with category model 
+Data: df
+Models:
+null_model: rating ~ (1 | pid)
+category_model: rating ~ category + (1 | pid)
+no_interaction_model: rating ~ portrayal + category + (1 | pid)
+model: rating ~ portrayal * category + (1 | pid)
+                     npar   AIC   BIC logLik -2*log(L)     Chisq Df Pr(>Chisq)
+null_model              3 82746 82770 -41370     82740                        
+category_model          5 71275 71315 -35633     71265 11474.766  2  < 2.2e-16
+no_interaction_model    8 71244 71306 -35614     71228    37.920  3  2.939e-08
+model                  14 71235 71345 -35603     71207    20.774  6   0.002015
+                        
+null_model              
+category_model       ***
+no_interaction_model ***
+model                ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+--------------###--------------
+ EMMeans Analysis for video vs no video conditions: 
+
+
+ Model Summary: 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: rating ~ video * category + (1 | pid)
+   Data: df
+
+REML criterion at convergence: 71283.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3295 -0.5398 -0.0872  0.6096  3.9495 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ pid      (Intercept) 0.5569   0.7462  
+ Residual             2.4474   1.5644  
+Number of obs: 18800, groups:  pid, 470
+
+Fixed effects:
+                             Estimate Std. Error         df t value Pr(>|t|)
+(Intercept)                 1.679e+00  7.554e-02  5.555e+02  22.222  < 2e-16
+videoVideo                  1.014e-01  8.729e-02  5.555e+02   1.162    0.246
+categoryFactor2             2.796e+00  4.699e-02  1.833e+04  59.503  < 2e-16
+categoryFactor3            -5.178e-01  1.066e-01  1.833e+04  -4.858 1.19e-06
+videoVideo:categoryFactor2  6.875e-02  5.429e-02  1.833e+04   1.266    0.205
+videoVideo:categoryFactor3 -1.502e-01  1.231e-01  1.833e+04  -1.220    0.223
+                              
+(Intercept)                ***
+videoVideo                    
+categoryFactor2            ***
+categoryFactor3            ***
+videoVideo:categoryFactor2    
+videoVideo:categoryFactor3    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) videVd ctgrF2 ctgrF3 vdV:F2
+videoVideo  -0.865                            
+catgryFctr2 -0.278  0.241                     
+catgryFctr3 -0.123  0.106  0.197              
+vdVd:ctgrF2  0.241 -0.278 -0.865 -0.171       
+vdVd:ctgrF3  0.106 -0.123 -0.171 -0.865  0.197
+
+
+ EMMeans Analysis for video: 
+$`emmeans of video`
+ video    emmean     SE  df lower.CL upper.CL
+ No video   2.44 0.0782 638     2.28     2.59
+ Video      2.51 0.0453 638     2.42     2.60
+
+Results are averaged over the levels of: category 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$`pairwise differences of video`
+ 1                estimate     SE  df t.ratio p.value
+ No video - Video  -0.0742 0.0904 638  -0.822  0.4116
+
+Results are averaged over the levels of: category 
+Degrees-of-freedom method: kenward-roger 
+
+ANOVA with category model 
+Data: df
+Models:
+null_model: rating ~ (1 | pid)
+category_model: rating ~ category + (1 | pid)
+no_interaction_video_model: rating ~ video + category + (1 | pid)
+video_model: rating ~ video * category + (1 | pid)
+                           npar   AIC   BIC logLik -2*log(L)      Chisq Df
+null_model                    3 82746 82770 -41370     82740              
+category_model                5 71275 71315 -35633     71265 11474.7658  2
+no_interaction_video_model    6 71275 71322 -35632     71263     2.1711  1
+video_model                   8 71275 71338 -35630     71259     3.8503  2
+                           Pr(>Chisq)    
+null_model                               
+category_model                 <2e-16 ***
+no_interaction_video_model     0.1406    
+video_model                    0.1459    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

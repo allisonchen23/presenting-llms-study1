@@ -1,0 +1,122 @@
+---***--- 
+
+ humanness analysis:  
+
+
+ Model Summary: 
+
+Call:
+lm(formula = attitude ~ 1 + portrayal, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.6154 -1.0776 -0.2269  0.7731  4.9224 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          2.13559    0.11304  18.892  < 2e-16 ***
+portrayalMachines   -0.05801    0.16056  -0.361  0.71805    
+portrayalTools       0.09130    0.15953   0.572  0.56741    
+portrayalCompanions  0.47979    0.16021   2.995  0.00289 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.228 on 466 degrees of freedom
+Multiple R-squared:  0.02846,	Adjusted R-squared:  0.02221 
+F-statistic: 4.551 on 3 and 466 DF,  p-value: 0.003722
+
+
+
+ EMMeans Analysis: 
+$`emmeans of portrayal`
+ portrayal  emmean    SE  df lower.CL upper.CL
+ NoVideo      2.14 0.113 466     1.91     2.36
+ Machines     2.08 0.114 466     1.85     2.30
+ Tools        2.23 0.113 466     2.01     2.45
+ Companions   2.62 0.114 466     2.39     2.84
+
+Confidence level used: 0.95 
+
+$`pairwise differences of portrayal`
+ 1                     estimate    SE  df t.ratio p.value
+ NoVideo - Machines      0.0580 0.161 466   0.361  0.9838
+ NoVideo - Tools        -0.0913 0.160 466  -0.572  0.9403
+ NoVideo - Companions   -0.4798 0.160 466  -2.995  0.0153
+ Machines - Tools       -0.1493 0.160 466  -0.932  0.7878
+ Machines - Companions  -0.5378 0.161 466  -3.343  0.0050
+ Tools - Companions     -0.3885 0.160 466  -2.430  0.0729
+
+P value adjustment: tukey method for comparing a family of 4 estimates 
+
+
+
+ Anova Analysis: 
+Analysis of Variance Table
+
+Model 1: attitude ~ 1
+Model 2: attitude ~ 1 + portrayal
+  Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+1    469 723.29                                
+2    466 702.70  3    20.587 4.5507 0.003722 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+--------------###--------------
+ Non-companion aggregate 
+ contrast                estimate     SE  df lower.CL upper.CL
+ Non-companion aggregate     2.15 0.0654 466     2.02     2.28
+
+Confidence level used: 0.95 
+
+Non-companion vs companion means
+ contrast                  estimate    SE  df lower.CL upper.CL t.ratio p.value
+ Companion - Non-companion    0.469 0.131 466    0.211    0.726   3.578  0.0004
+
+Confidence level used: 0.95 
+
+--------------###--------------
+ EMMeans Analysis for video vs no video conditions: 
+
+ Model Summary: 
+
+Call:
+lm(formula = attitude ~ 1 + video, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.3068 -1.1356 -0.3068  0.6932  4.6932 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   2.1356     0.1142  18.694   <2e-16 ***
+videoVideo    0.1712     0.1320   1.297    0.195    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.241 on 468 degrees of freedom
+Multiple R-squared:  0.003582,	Adjusted R-squared:  0.001453 
+F-statistic: 1.683 on 1 and 468 DF,  p-value: 0.1952
+
+
+ EMMeans Analysis for video: 
+$`emmeans of video`
+ video    emmean     SE  df lower.CL upper.CL
+ No video   2.14 0.1140 468     1.91     2.36
+ Video      2.31 0.0661 468     2.18     2.44
+
+Confidence level used: 0.95 
+
+$`pairwise differences of video`
+ 1                estimate    SE  df t.ratio p.value
+ No video - Video   -0.171 0.132 468  -1.297  0.1952
+
+
+
+ Anova Analysis for video: 
+Analysis of Variance Table
+
+Model 1: attitude ~ 1
+Model 2: attitude ~ 1 + video
+  Res.Df    RSS Df Sum of Sq      F Pr(>F)
+1    469 723.29                           
+2    468 720.69  1     2.591 1.6825 0.1952
